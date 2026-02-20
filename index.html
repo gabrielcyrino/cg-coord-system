@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Coordenadas 2D — CG Interativo</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════ -->
+<aside class="sidebar">
+
+  <!-- Header: title + theme toggle -->
+  <div class="sidebar-header">
+    <span class="sidebar-title">Sistema de Coordenadas 2D</span>
+    <div class="theme-toggle">
+      <span class="theme-icon" id="theme-icon">☀︎</span>
+      <button class="theme-btn" id="theme-btn" title="Alternar Dark / Light"></button>
+    </div>
+  </div>
+
+  <!-- Coordinate system selector -->
+  <div class="card">
+    <div class="card-title">Sistema de Coordenadas</div>
+    <div class="coord-toggle">
+      <button class="coord-btn" id="btn-cg">
+        CG / Screen<br><small style="font-weight:400">Y cresce ↓</small>
+      </button>
+      <button class="coord-btn" id="btn-math">
+        Matemático<br><small style="font-weight:400">Y cresce ↑</small>
+      </button>
+    </div>
+  </div>
+
+  <!-- Edit mode selector -->
+  <div class="card">
+    <div class="card-title">Modo de Edição</div>
+    <div class="mode-btns">
+      <button class="mode-btn" id="mode-select">
+        <span class="mode-icon">↖</span> Selecionar / Mover
+      </button>
+      <button class="mode-btn" id="mode-vertex">
+        <span class="mode-icon">●</span> Inserir Vértice
+      </button>
+      <button class="mode-btn" id="mode-edge">
+        <span class="mode-icon">╱</span> Inserir Aresta
+      </button>
+    </div>
+  </div>
+
+  <!-- Add vertex by coordinates -->
+  <div class="card">
+    <div class="card-title">Inserir Vértice por Coord.</div>
+    <div class="input-row">
+      <div class="input-group">
+        <label for="inp-x">X</label>
+        <input type="number" id="inp-x" value="0" step="10">
+      </div>
+      <div class="input-group">
+        <label for="inp-y">Y</label>
+        <input type="number" id="inp-y" value="0" step="10">
+      </div>
+    </div>
+    <button class="btn-primary" id="add-vertex-btn">+ Adicionar Vértice</button>
+  </div>
+
+  <!-- Vertex list -->
+  <div class="card">
+    <div class="card-title">Vértices (<span id="v-count">0</span>)</div>
+    <div id="vertex-list" class="vertex-list">
+      <div class="empty-hint">Nenhum vértice ainda</div>
+    </div>
+  </div>
+
+  <!-- Edge list -->
+  <div class="card">
+    <div class="card-title">Arestas (<span id="e-count">0</span>)</div>
+    <div id="edge-list" class="edge-list">
+      <div class="empty-hint">Nenhuma aresta ainda</div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="card">
+    <button class="btn-primary btn-danger" id="clear-btn">Limpar Tudo</button>
+  </div>
+
+</aside>
+
+<!-- ══════════════════════════════════════════
+     MAIN AREA
+══════════════════════════════════════════ -->
+<main class="main">
+
+  <!-- Canvas -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+    <div class="coord-badge" id="coord-badge"></div>
+  </div>
+
+  <!-- Status bar -->
+  <div class="statusbar">
+    <span id="st-mode">Modo: —</span>
+    <span id="st-pos">Pos: (0, 0)</span>
+    <span id="st-zoom">Zoom: 100%</span>
+    <span id="st-msg" class="highlight"></span>
+    <button class="reset-btn" id="reset-view-btn" title="Resetar zoom e pan (Ctrl+0)">↺ Reset View</button>
+  </div>
+
+  <!-- Info panel -->
+  <div class="info-panel">
+    <div class="info-tabs">
+      <div class="info-tab active" id="tab-sys">Sistema Atual</div>
+      <div class="info-tab"        id="tab-diff">CG vs. Matemático</div>
+      <div class="info-tab"        id="tab-mode">Como Usar</div>
+    </div>
+    <div class="info-body" id="info-body"></div>
+  </div>
+
+</main>
+
+<!--
+  ES modules require a server (e.g. VS Code Live Server, or
+  `python -m http.server` in this folder).  Opening index.html
+  directly via file:// will NOT work in Chromium-based browsers.
+-->
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

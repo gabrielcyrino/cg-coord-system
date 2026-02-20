@@ -1,0 +1,47 @@
+/* ─────────────────────────────────────────────
+   Tema: variáveis CSS
+   Light = padrão  |  [data-theme="dark"] = escuro
+───────────────────────────────────────────── */
+:root {
+  --bg-page:       #f0f4f8;
+  --bg-panel:      #ffffff;
+  --bg-deep:       #f7f9fc;
+  --bg-input:      #f0f4f8;
+  --bg-canvas:     #f8fafc;
+  --border:        #dde3ef;
+  --text-main:     #1e293b;
+  --text-secondary:#475569;
+  --text-muted:    #94a3b8;
+  --scrollbar:     #cbd5e1;
+  --item-hover:    #eff6ff;
+  --mode-active:   #eef2ff;
+  --mode-color:    #4338ca;
+  --tabs-bg:       #f7f9fc;
+  --info-text:     #475569;
+  --info-h4:       #1e293b;
+  --note-bg:       #f0f4f8;
+  --note-border:   #dde3ef;
+  --hl:            #4f46e5;
+}
+
+[data-theme="dark"] {
+  --bg-page:       #111827;
+  --bg-panel:      #1f2937;
+  --bg-deep:       #111827;
+  --bg-input:      #111827;
+  --bg-canvas:     #0d1117;
+  --border:        #374151;
+  --text-main:     #e5e7eb;
+  --text-secondary:#9ca3af;
+  --text-muted:    #6b7280;
+  --scrollbar:     #4b5563;
+  --item-hover:    #1e3a5f;
+  --mode-active:   #312e81;
+  --mode-color:    #a5b4fc;
+  --tabs-bg:       #111827;
+  --info-text:     #9ca3af;
+  --info-h4:       #e5e7eb;
+  --note-bg:       #111827;
+  --note-border:   #4b5563;
+  --hl:            #a5b4fc;
+}
